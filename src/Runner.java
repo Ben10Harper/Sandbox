@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class Runner {
 
@@ -17,6 +18,24 @@ public class Runner {
 
 		System.out.println("bits = " + numberBits + " bytes = " 
 		+ byteAnswer + " remainder = " + byteRemainder);
-
+		
+		
+		
+		/*** How to handle mixed case y, Y, yes, Yes, YES ... ***/
+		
+		Scanner kbd = new Scanner(System.in);
+		System.out.println("Hello, enter your answer (Y/N)");
+		String answer = kbd.nextLine().toUpperCase();
+		System.out.println("You have entered "+answer);
+		
+		//decision time!
+		if(answer.equalsIgnoreCase("y")||answer.equalsIgnoreCase("yes")) {
+			System.out.println("You have selected YES!");
+		} else if(answer.equalsIgnoreCase("n")||answer.equalsIgnoreCase("no")) {
+			System.out.println("You have selected NO!");
+		} else {
+			System.out.println("I'm confused! Please try again!");
+		}
+		
 	}
 }
